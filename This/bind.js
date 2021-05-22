@@ -1,6 +1,5 @@
 // 模拟 bind
 
-
 Function.prototype.bind = Function.prototype.bind || function(context){  // 这里使用了短路运算，如果函数本身有bind，就直接用
     var me = this  // 既然是绑定this，表面当前的this有归属，把它存起来
     var args = Array.prototype.slice.call(arguments,1);  // 使用数组方法存储参数
