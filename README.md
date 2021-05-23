@@ -14,3 +14,10 @@ JavaScript手写实现系列。
 
     [set](https://github.com/ideazhao/Handwriting-Series/blob/master/Array/unique_set.js)
 
+- This
+    [bind]()
+    [apply]()
+
+- [InstanceOf]()
+
+  

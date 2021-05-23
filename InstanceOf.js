@@ -9,16 +9,14 @@ function instance_of(L, R) {
     if(L === null || (typeof L !== 'object' && typeof L !==  'function')) return false
     let RP = R.prototype;  //拿到右表达式的显示原型
     let LP = L.__proto__;  //拿到左表达式的隐式原型
-    while(true){
-        if(RP !== LP){  
-            return false
-        } else {
-            return true
-        }
+    if(RP !== LP){  
+        return false
+    } else {
+        return true
     }
   }
   
 
-let test = [1,2,3]
+let test = [1,2,3,4]
 let result = instance_of(test,Array)
 console.log(result)
