@@ -15,9 +15,11 @@ JavaScript手写实现系列。
     [set](https://github.com/ideazhao/Handwriting-Series/blob/master/Array/unique_set.js)
 
 - This
-    [bind]()
-    [apply]()
 
-- [InstanceOf]()
+    [bind](https://github.com/ideazhao/Handwriting-Series/blob/master/This/bind.js)
+
+    [apply](https://github.com/ideazhao/Handwriting-Series/blob/master/This/apply.js)
+
+- [InstanceOf](https://github.com/ideazhao/Handwriting-Series/blob/master/InstanceOf.js)
 
   
