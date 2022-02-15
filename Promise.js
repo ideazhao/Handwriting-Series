@@ -112,7 +112,7 @@ class Promise {
                     count++;
                     arr[i] = val;
                     if (count === l) {
-                        reresolve(arr);
+                        resolve(arr);
                     }
                 }, reject);
             }
