@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>debounce</title>
+</head>
+<body>
+    <button class="button">点我抖动</button>
+    <script>
+        let btn = document.querySelector('.button')
+        btn.addEventListener('click',throttle(consoleTest,2000))
+
+        //执行动作
+        function consoleTest(){
+            console.log('debounce','抖不动')
+        }
+
+        // 防抖方法
+        function debounce(fn,delay){
+            if(typeof fn!= 'function'){
+                throw Error('fn不是函数')
+            }
+            let timer
+            return function() {
+                let _this = this
+                let args = arguments
+                if(timer){
+                    clearTimeout(timer)
+                }
+                timer = setTimeout(function(){
+                    fn.apply(_this,args)
+                },delay)
+            }
+        }
+
+        //节流
+        function throttle(fn,delay){
+            if(typeof fn != 'function'){
+                throw Error('fn不是函数')
+            }
+            let timer
+            return function(){
+                let _this = this
+                let _args = arguments
+                if(timer){
+                    return
+                }
+                timer = setTimeout(function(){
+                    fn.apply(_this,_args)
+                    timer = null
+                },delay)
+            }
+        }
+    </script>
+</body>
+</html>
