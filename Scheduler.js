@@ -1,6 +1,10 @@
 // JS实现一个带并发限制的异步调度器
 // 最大并发数为2
 class Scheduler {
+    
+    list = [];//用来承载还未执行的异步
+    count = 0; //用来计数
+
     add(fn) {    
         this.count >= this.num ? await new Promise((resolve) => { this.list.push(resolve) }) : "";
  
