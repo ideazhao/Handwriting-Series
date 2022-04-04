@@ -14,9 +14,21 @@ function instance_of(L, R) {
     } else {
         return true
     }
-  }
+}
+
+//版本二
+// 这个版本利用getPrototypeOf方法代替了旧的方法获取原型对象
+function instance_of2(left,right){
+    let proto = Object.getPrototypeOf(left),
+        prototype = right.prototype;
+    while(true){
+        if(!proto) return false
+        if(proto === prototype) return true
+        proto = Object.getPrototypeOf(proto)
+    }
+}
   
 
 let test = [1,2,3,4]
-let result = instance_of(test,Array)
+let result = instance_of2(test,Array)
 console.log(result)
