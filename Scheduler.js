@@ -2,11 +2,14 @@
 // 最大并发数为2
 class Scheduler {
     
-    list = [];//用来承载还未执行的异步
-    count = 0; //用来计数
+    constructor(maxNum){
+      this.list = [];//用来承载还未执行的异步
+      this.count = 0; //用来计数
+      this.maxNum = maxNum
+    }
 
     add(fn) {    
-        this.count >= this.num ? await new Promise((resolve) => { this.list.push(resolve) }) : "";
+        this.count >= this.maxNum ? await new Promise((resolve) => { this.list.push(resolve) }) : "";
  
         this.count++;
     

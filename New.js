@@ -3,7 +3,7 @@ function New(func) {
     let res = {};  
     if (func.prototype !== null) {  
         // 2、将传入的构造函数的原型与新对象之间建立联系
-        res.__proto__ = func.prototype;  
+        Object.setPrototypeOf(res,func.prototype)
     }
     // 3、绑定this及传参
     let ret = func.apply(res, Array.from(arguments).slice(1));
@@ -17,7 +17,7 @@ function New(func) {
 function Person(name,age){
     this.name = name
     this.age = age
-    return []
+    // return []
     // return {
     //     name:'idea',
     //     age:18
